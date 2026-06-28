@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Air Conditioning Services Bucharest | Professional Installation & Steam Cleaning</title>
+    <title>Montaj Aer Condiționat București | Instalare și Igienizare profesională</title>
     <style>
-        /* CSS RESET & THEME VARIABLES */
+        /* RESETARE CSS ȘI VARIABILE DE CULOARE */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', BlinkMacSystemFont, Roboto, sans-serif; }
         
         :root {
@@ -23,13 +23,13 @@
             background-color: var(--bg-main);
             color: var(--text-light);
             line-height: 1.6;
-            padding-bottom: 80px; /* Space for fixed mobile bar */
+            padding-bottom: 80px;
         }
 
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
 
-        /* HEADER NAVIGATION */
+        /* BARA DE NAVIGARE */
         .navbar {
             background: rgba(11, 15, 23, 0.95);
             border-bottom: 1px solid var(--border-color);
@@ -72,22 +72,13 @@
             box-shadow: 0 6px 20px rgba(0, 210, 255, 0.4);
         }
 
-        /* HERO PROFILE SECTION */
+        /* SECȚIUNEA HERO */
         .hero {
             padding: 7rem 2rem;
             text-align: center;
             background: radial-gradient(circle at center, #162235 0%, var(--bg-main) 70%);
             position: relative;
             overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=1920&q=20') center/cover no-repeat;
-            opacity: 0.03;
-            pointer-events: none;
         }
         
         .hero-badge {
@@ -167,10 +158,11 @@
             transform: translateY(-2px);
         }
 
-        /* SERVICE METRICS BAR */
+        /* BARA DE STATISTICI */
         .metrics-bar {
             background: var(--bg-card);
-            border-y: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
             padding: 2.5rem 2rem;
         }
         
@@ -197,7 +189,7 @@
             letter-spacing: 1px;
         }
 
-        /* MAIN SERVICES GRID SECTION */
+        /* SERVICII PRINCIPALE */
         .services-section {
             padding: 7rem 2rem;
             max-width: 1200px;
@@ -244,12 +236,6 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
         
-        .box-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-        
         .service-box h3 {
             font-size: 1.45rem;
             margin-bottom: 1rem;
@@ -276,7 +262,7 @@
         }
         
         .features-list li::before {
-            content: "✓";
+            content: "-";
             position: absolute;
             left: 0;
             color: var(--primary-blue);
@@ -304,11 +290,12 @@
             color: var(--price-tag);
         }
 
-        /* EXTRA PROVISIONS BLOCK */
+        /* AVANTAJE SUPLIMENTARE */
         .extra-benefits {
             background: #101622;
             padding: 6rem 2rem;
-            border-y: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
         
         .benefits-inner {
@@ -324,10 +311,6 @@
             margin-top: 3.5rem;
         }
         
-        .benefit-item {
-            padding: 1rem;
-        }
-        
         .benefit-item h4 {
             color: #fff;
             margin-bottom: 0.6rem;
@@ -340,7 +323,115 @@
             font-size: 0.95rem;
         }
 
-        /* PREMIUM FOOTER ARCHITECTURE */
+        /* CHATBOT INTEGRAT (HTML/CSS/JS) */
+        .chat-widget {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 5000;
+            font-size: 0.95rem;
+        }
+
+        .chat-button {
+            background: var(--secondary-blue);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 118, 255, 0.4);
+            border: none;
+            transition: 0.3s;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.05);
+        }
+
+        .chat-window {
+            display: none;
+            width: 320px;
+            height: 400px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: var(--secondary-blue);
+            padding: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-close {
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .msg {
+            max-width: 80%;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .msg.bot {
+            background: var(--border-color);
+            color: #fff;
+            align-self: flex-start;
+        }
+
+        .msg.user {
+            background: var(--primary-blue);
+            color: #000;
+            align-self: flex-end;
+            font-weight: 500;
+        }
+
+        .chat-options {
+            padding: 10px;
+            background: rgba(0,0,0,0.2);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .opt-btn {
+            background: transparent;
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .opt-btn:hover {
+            background: var(--primary-blue);
+            color: #000;
+        }
+
+        /* SUBSOL (FOOTER) */
         footer {
             background: var(--bg-main);
             padding: 5rem 2rem 3rem 2rem;
@@ -368,7 +459,7 @@
             color: #475569;
         }
 
-        /* UNBREAKABLE FIXED MOBILE DISPATCH BAR */
+        /* BARA FIXĂ DE CONTACT (MOBIL) */
         .fixed-action-bar {
             position: fixed;
             bottom: 0;
@@ -377,7 +468,7 @@
             background: #0f141f;
             border-top: 1px solid var(--border-color);
             display: flex;
-            z-index: 9999;
+            z-index: 4999;
             padding: 0.8rem 1rem;
             box-shadow: 0 -10px 35px rgba(0,0,0,0.6);
             gap: 0.8rem;
@@ -408,162 +499,230 @@
             color: #000;
         }
 
-        /* RESPONSIVE DESIGN ADJUSTMENTS */
+        /* MEDIA QUERIES (RESPONSIVITATE) */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.4rem; }
             .hero p { font-size: 1.1rem; }
             .services-section { padding: 4rem 1rem; }
             .services-grid { grid-template-columns: 1fr; }
             .nav-cta { display: none; }
+            .chat-widget { bottom: 85px; right: 10px; }
+            .chat-window { width: 300px; height: 350px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- STICKY TOP NAVIGATION -->
+    <!-- NAVIGARE -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">AC<span>Expert</span></div>
-            <a href="tel:+40745629348" class="nav-cta">Call 0745 629 348</a>
+            <a href="tel:+40745629348" class="nav-cta">Suna la 0745 629 348</a>
         </div>
     </nav>
 
-    <!-- EYE-CATCHING HERO HEADER -->
+    <!-- SECȚIUNEA PRINCIPALĂ (HERO) -->
     <header class="hero">
         <div class="container">
-            <span class="hero-badge">Bucharest &amp; Surrounding Areas</span>
-            <h1>Premium Climate Solutions<br><span>Installation &amp; Maintenance</span></h1>
-            <p>Fast, clean, and fully transparent air conditioning solutions tailored for residential setups and local businesses across Bucharest.</p>
+            <span class="hero-badge">București și Împrejurimi</span>
+            <h1>Servicii Profesionale Climatizare<br><span>Montaj și Igienizare Rapiză</span></h1>
+            <p>Oferim servicii prompte, curate și transparente de instalare, mentenanță și igienizare antibacteriană pentru aparate de aer condiționat rezidențiale sau comerciale.</p>
             <div class="hero-actions">
-                <a href="https://wa.me/40745629348" class="btn btn-primary" target="_blank" rel="noopener">Message via WhatsApp</a>
-                <a href="tel:+40745629348" class="btn btn-secondary">Direct Call</a>
+                <a href="https://wa.me/40745629348" class="btn btn-primary" target="_blank" rel="noopener">Mesaj pe WhatsApp</a>
+                <a href="tel:+40745629348" class="btn btn-secondary">Apel Direct</a>
             </div>
         </div>
     </header>
 
-    <!-- METRICS DATA SLIDER -->
+    <!-- BARA DE STATISTICI / REPERE -->
     <section class="metrics-bar">
         <div class="metrics-grid">
             <div class="metric-card">
                 <h3>București</h3>
-                <p>Full Coverage &amp; Surroundings</p>
+                <p>Acoperire totală plus Ilfov</p>
             </div>
             <div class="metric-card">
-                <h3>Clean</h3>
-                <p>Fast &amp; Professional Execution</p>
+                <h3>Profesional</h3>
+                <p>Lucrări curate și rapide</p>
             </div>
             <div class="metric-card">
-                <h3>All-In-One</h3>
-                <p>Sales, Mounts, &amp; Repairs</p>
+                <h3>Complet</h3>
+                <p>Montaj, igienizare și vânzări</p>
             </div>
         </div>
     </section>
 
-    <!-- CORE SERVICE PORTFOLIO GRID -->
+    <!-- GRILA DE SERVICII CU PREȚURI -->
     <section class="services-section">
         <div class="section-title">
-            <h2>Our Specialized AC Services</h2>
-            <p>Certified engineering procedures maximizing cooling performance and unit durability.</p>
+            <h2>Serviciile Noastre Specializate</h2>
+            <p>Intervenții tehnice autorizate pentru performanță maximă și aer curat în locuință.</p>
         </div>
         
         <div class="services-grid">
-            <!-- CARDBOX 1: INSTALLATION -->
+            <!-- SERVICIUL 1 -->
             <div class="service-box">
                 <div>
-                    <span class="box-icon">🛠️</span>
-                    <h3>Professional Installation</h3>
-                    <p>Complete structural implementation of newly purchased or repositioned cooling hardware systems.</p>
+                    <h3>Montaj Aer Condiționat</h3>
+                    <p>Instalare completă pentru aparate noi sau second-hand, respectând normele tehnice de vidre și fixare structurală.</p>
                     <ul class="features-list">
-                        <li>Standard bracket adjustments</li>
-                        <li>High-grade structural vacuuming</li>
-                        <li>Clean drilling layouts</li>
+                        <li>Prindere console și unitate externă</li>
+                        <li>Traseu frigorific optimizat</li>
+                        <li>Vidarea sistemului cu pompă specială</li>
                     </ul>
                 </div>
                 <div class="box-price">
-                    <span class="price-label">Starting From</span>
-                    <span class="price-value">400 LEI</span>
+                    <span class="price-label">Preț pornire</span>
+                    <span class="price-value">de la 400 LEI</span>
                 </div>
             </div>
 
-            <!-- CARDBOX 2: STEAM SANITIZATION -->
+            <!-- SERVICIUL 2 -->
             <div class="service-box">
                 <div>
-                    <span class="box-icon">💨</span>
-                    <h3>Premium Steam Cleaning</h3>
-                    <p>High-temperature deep steam cleaning combined with advanced anti-bacterial treatments to eradicate mold spores.</p>
+                    <h3>Igienizare Profesională cu Abur</h3>
+                    <p>Curățare în profunzime la temperatură înaltă combinată cu soluții antibacteriene pentru eliminarea completă a mucegaiului.</p>
                     <ul class="features-list">
-                        <li>Eliminates bad odors completely</li>
-                        <li>Deep component disinfection</li>
-                        <li>Airflow pathway cleaning</li>
+                        <li>Elimină mirosurile neplăcute</li>
+                        <li>Dezinfectare radiator și turbină</li>
+                        <li>Curățare tăviță condens</li>
                     </ul>
                 </div>
                 <div class="box-price">
-                    <span class="price-label">Starting From</span>
-                    <span class="price-value">150 LEI</span>
+                    <span class="price-label">Preț pornire</span>
+                    <span class="price-value">de la 150 LEI</span>
                 </div>
             </div>
 
-            <!-- CARDBOX 3: FREON CHARGING -->
+            <!-- SERVICIUL 3 -->
             <div class="service-box">
                 <div>
-                    <span class="box-icon">🧪</span>
-                    <h3>Freon Refills &amp; Checks</h3>
-                    <p>Comprehensive system diagnostic testing, pressure leak tracing, and eco-friendly gas structural adjustments.</p>
+                    <h3>Încărcare Freon și Verificări</h3>
+                    <p>Verificarea presiunii din instalație, identificarea eventualelor pierderi și completarea cu agent frigorific ecologic.</p>
                     <ul class="features-list">
-                        <li>Pressure drop evaluation</li>
-                        <li>Leak identification tracking</li>
-                        <li>Certified eco-refrigerants</li>
+                        <li>Diagnosticare presiune lucru</li>
+                        <li>Detectare pierderi pe traseu</li>
+                        <li>Refrigerant ecologic inclus</li>
                     </ul>
                 </div>
                 <div class="box-price">
-                    <span class="price-label">Starting From</span>
-                    <span class="price-value">300 LEI</span>
+                    <span class="price-label">Preț pornire</span>
+                    <span class="price-value">de la 300 LEI</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BRAND TRUST FACTORS -->
+    <!-- SECȚIUNE AVANTAJE -->
     <section class="extra-benefits">
         <div class="benefits-inner">
-            <h2>Engineered For Ultimate Reliability</h2>
-            <p style="color: var(--text-muted); margin-top: 0.5rem;">Why local home owners choose our professional HVAC solutions.</p>
+            <h2>Seriozitate și Transparență</h2>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">De ce să colaborezi cu echipa noastră pentru climatizarea casei tale.</p>
             <div class="benefits-grid">
                 <div class="benefit-item">
-                    <h4>Diagnostics &amp; Repair</h4>
-                    <p>Accurate fault pinpointing to get your broken unit running smoothly again fast.</p>
+                    <h4>Diagnosticare și Reparații</h4>
+                    <p>Depistăm rapid defecțiunile electrice sau mecanice și repunem aparatul în funcțiune.</p>
                 </div>
                 <div class="benefit-item">
-                    <h4>Hardware Unit Sales</h4>
-                    <p>We source premium climate equipment setups including brand new or certified second-hand systems.</p>
+                    <h4>Vânzări Aparate AC</h4>
+                    <p>Consiliere gratuită și furnizare de unități de climatizare noi sau second-hand verificate.</p>
                 </div>
                 <div class="benefit-item">
-                    <h4>No Hidden Fees</h4>
-                    <p>Transparent pricing frameworks mapping directly out before any on-site deployment.</p>
+                    <h4>Fără Costuri Ascunse</h4>
+                    <p>Prețurile sunt stabilite clar în mod direct, înainte de a începe execuția lucrării.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PREMIUM COMPACT FOOTER -->
+    <!-- WIDGET CHATBOT INTERACTIV -->
+    <div class="chat-widget">
+        <button class="chat-button" id="chatBtn" onclick="toggleChat()">Asistent Online</button>
+        <div class="chat-window" id="chatWin">
+            <div class="chat-header">
+                <span>Asistent Virtual AC</span>
+                <button class="chat-close" onclick="toggleChat()">X</button>
+            </div>
+            <div class="chat-messages" id="chatMsgs">
+                <div class="msg bot">Bună ziua! Cu ce vă pot ajuta astăzi? Selectați o opțiune de mai jos pentru detalii imediate:</div>
+            </div>
+            <div class="chat-options" id="chatOpts">
+                <button class="opt-btn" onclick="botReply('montaj')">Preț Montaj</button>
+                <button class="opt-btn" onclick="botReply('igienizare')">Preț Igienizare</button>
+                <button class="opt-btn" onclick="botReply('freon')">Preț Freon</button>
+                <button class="opt-btn" onclick="botReply('contact')">Cum comand?</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUBSOL (FOOTER) -->
     <footer>
-        <div class="footer-brand">AC<span>Expert Bucharest</span></div>
-        <p>Professional Air Conditioning Supply, Mounting, &amp; System Maintenance.</p>
-        <p style="margin-top: 0.5rem;">Contact Dispatch: 0745 629 348</p>
+        <div class="footer-brand">AC<span>Expert București</span></div>
+        <p>Servicii Profesionale de Vânzare, Instalare și Mentenanță Sisteme de Climatizare.</p>
+        <p style="margin-top: 0.5rem;">Dispecerat: 0745 629 348</p>
         <div class="footer-meta">
-            &copy; 2026 AC Expert Bucharest. All rights reserved. Private Operator. Certified Professional Performance.
+            &copy; 2026 AC Expert București. Toate drepturile rezervate. Persoană Fizică Autorizată.
         </div>
     </footer>
 
-    <!-- FIXED MOBILE INTERACTION DOCK -->
+    <!-- BARA DE ACTIUNE FIXĂ PENTRU MOBIL -->
     <div class="fixed-action-bar">
         <a href="tel:+40745629348" class="action-tab tab-phone">
-            <span>📞 Call 0745 629 348</span>
+            <span>Suna 0745 629 348</span>
         </a>
         <a href="https://wa.me/40745629348" class="action-tab tab-whatsapp" target="_blank" rel="noopener">
-            <span>💬 WhatsApp</span>
+            <span>WhatsApp</span>
         </a>
     </div>
 
+    <!-- SCRIPT LOGICĂ CHATBOT -->
+    <script>
+        function toggleChat() {
+            var win = document.getElementById('chatWin');
+            var btn = document.getElementById('chatBtn');
+            if(win.style.display === 'none' || win.style.display === '') {
+                win.style.display = 'flex';
+                btn.style.display = 'none';
+            } else {
+                win.style.display = 'none';
+                btn.style.display = 'block';
+            }
+        }
+
+        function botReply(type) {
+            var msgsContainer = document.getElementById('chatMsgs');
+            var userText = "";
+            var botText = "";
+
+            if(type === 'montaj') {
+                userText = "Care este prețul pentru montaj?";
+                botText = "Prețul pentru montaj complet pornește de la 400 lei, în funcție de complexitatea traseului și capacitatea aparatului (BTU). Pentru o ofertă fixă, ne puteți contacta direct prin telefon.";
+            } else if(type === 'igienizare') {
+                userText = "Cât costă igienizarea cu abur?";
+                botText = "Igienizarea profesională cu abur la temperatură înaltă pornește de la 150 lei per unitate. Curăță eficient bacteriile și mucegaiul depus.";
+            } else if(type === 'freon') {
+                userText = "Ce preț are încărcarea cu freon?";
+                botText = "Încărcarea sau completarea cu freon pornește de la 300 lei. Prețul include verificarea presiunii și localizarea eventualelor pierderi.";
+            } else if(type === 'contact') {
+                userText = "Cum pot face o programare?";
+                botText = "Puteți stabili o programare rapidă sunând direct la numărul 0745 629 348 sau trimițând un mesaj rapid pe WhatsApp prin butoanele verzi de pe ecran.";
+            }
+
+            // Adaugă mesaj utilizator
+            var userDiv = document.createElement('div');
+            userDiv.className = "msg user";
+            userDiv.innerText = userText;
+            msgsContainer.appendChild(userDiv);
+
+            // Răspuns bot simulat cu scurt delay
+            setTimeout(function(){
+                var botDiv = document.createElement('div');
+                botDiv.className = "msg bot";
+                botDiv.innerText = botText;
+                msgsContainer.appendChild(botDiv);
+                msgsContainer.scrollTop = msgsContainer.scrollHeight;
+            }, 300);
+        }
+    </script>
 </body>
 </html>
