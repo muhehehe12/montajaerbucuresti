@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Air Conditioning Services Bucharest | Professional Installation & Steam Cleaning</title>
+    <style>
+        /* CSS RESET & THEME VARIABLES */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', BlinkMacSystemFont, Roboto, sans-serif; }
+        
+        :root {
+            --bg-main: #0b0f17;
+            --bg-card: #131a26;
+            --primary-blue: #00d2ff;
+            --secondary-blue: #0076ff;
+            --text-light: #ffffff;
+            --text-muted: #94a3b8;
+            --border-color: #222f43;
+            --price-tag: #00ff87;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding-bottom: 80px; /* Space for fixed mobile bar */
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* HEADER NAVIGATION */
+        .navbar {
+            background: rgba(11, 15, 23, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logo span { color: var(--primary-blue); }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.2);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.4);
+        }
+
+        /* HERO PROFILE SECTION */
+        .hero {
+            padding: 7rem 2rem;
+            text-align: center;
+            background: radial-gradient(circle at center, #162235 0%, var(--bg-main) 70%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=1920&q=20') center/cover no-repeat;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        
+        .hero-badge {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--primary-blue);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+        }
+        
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+        
+        .hero h1 span {
+            background: linear-gradient(to right, #ffffff, var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+        }
+        
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1.1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: #25D366;
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--text-muted);
+            transform: translateY(-2px);
+        }
+
+        /* SERVICE METRICS BAR */
+        .metrics-bar {
+            background: var(--bg-card);
+            border-y: 1px solid var(--border-color);
+            padding: 2.5rem 2rem;
+        }
+        
+        .metrics-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+            text-align: center;
+        }
+        
+        .metric-card h3 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+        }
+        
+        .metric-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* MAIN SERVICES GRID SECTION */
+        .services-section {
+            padding: 7rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4.5rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .service-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-box:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 210, 255, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .box-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .service-box h3 {
+            font-size: 1.45rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .service-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .features-list {
+            margin-bottom: 2rem;
+        }
+        
+        .features-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+        
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        .box-price {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .price-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+        
+        .price-value {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--price-tag);
+        }
+
+        /* EXTRA PROVISIONS BLOCK */
+        .extra-benefits {
+            background: #101622;
+            padding: 6rem 2rem;
+            border-y: 1px solid var(--border-color);
+        }
+        
+        .benefits-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+        
+        .benefit-item {
+            padding: 1rem;
+        }
+        
+        .benefit-item h4 {
+            color: #fff;
+            margin-bottom: 0.6rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        
+        .benefit-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* PREMIUM FOOTER ARCHITECTURE */
+        footer {
+            background: var(--bg-main);
+            padding: 5rem 2rem 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .footer-brand {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-brand span { color: var(--primary-blue); }
+        
+        .footer-meta {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            color: #475569;
+        }
+
+        /* UNBREAKABLE FIXED MOBILE DISPATCH BAR */
+        .fixed-action-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #0f141f;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            z-index: 9999;
+            padding: 0.8rem 1rem;
+            box-shadow: 0 -10px 35px rgba(0,0,0,0.6);
+            gap: 0.8rem;
+        }
+        
+        .action-tab {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .tab-whatsapp {
+            background: #25D366;
+            color: #fff;
+        }
+        
+        .tab-phone {
+            background: #fff;
+            color: #000;
+        }
+
+        /* RESPONSIVE DESIGN ADJUSTMENTS */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.4rem; }
+            .hero p { font-size: 1.1rem; }
+            .services-section { padding: 4rem 1rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .nav-cta { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY TOP NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">AC<span>Expert</span></div>
+            <a href="tel:+40745629348" class="nav-cta">Call 0745 629 348</a>
+        </div>
+    </nav>
+
+    <!-- EYE-CATCHING HERO HEADER -->
+    <header class="hero">
+        <div class="container">
+            <span class="hero-badge">Bucharest &amp; Surrounding Areas</span>
+            <h1>Premium Climate Solutions<br><span>Installation &amp; Maintenance</span></h1>
+            <p>Fast, clean, and fully transparent air conditioning solutions tailored for residential setups and local businesses across Bucharest.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/40745629348" class="btn btn-primary" target="_blank" rel="noopener">Message via WhatsApp</a>
+                <a href="tel:+40745629348" class="btn btn-secondary">Direct Call</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- METRICS DATA SLIDER -->
+    <section class="metrics-bar">
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>București</h3>
+                <p>Full Coverage &amp; Surroundings</p>
+            </div>
+            <div class="metric-card">
+                <h3>Clean</h3>
+                <p>Fast &amp; Professional Execution</p>
+            </div>
+            <div class="metric-card">
+                <h3>All-In-One</h3>
+                <p>Sales, Mounts, &amp; Repairs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE SERVICE PORTFOLIO GRID -->
+    <section class="services-section">
+        <div class="section-title">
+            <h2>Our Specialized AC Services</h2>
+            <p>Certified engineering procedures maximizing cooling performance and unit durability.</p>
+        </div>
+        
+        <div class="services-grid">
+            <!-- CARDBOX 1: INSTALLATION -->
+            <div class="service-box">
+                <div>
+                    <span class="box-icon">🛠️</span>
+                    <h3>Professional Installation</h3>
+                    <p>Complete structural implementation of newly purchased or repositioned cooling hardware systems.</p>
+                    <ul class="features-list">
+                        <li>Standard bracket adjustments</li>
+                        <li>High-grade structural vacuuming</li>
+                        <li>Clean drilling layouts</li>
+                    </ul>
+                </div>
+                <div class="box-price">
+                    <span class="price-label">Starting From</span>
+                    <span class="price-value">400 LEI</span>
+                </div>
+            </div>
+
+            <!-- CARDBOX 2: STEAM SANITIZATION -->
+            <div class="service-box">
+                <div>
+                    <span class="box-icon">💨</span>
+                    <h3>Premium Steam Cleaning</h3>
+                    <p>High-temperature deep steam cleaning combined with advanced anti-bacterial treatments to eradicate mold spores.</p>
+                    <ul class="features-list">
+                        <li>Eliminates bad odors completely</li>
+                        <li>Deep component disinfection</li>
+                        <li>Airflow pathway cleaning</li>
+                    </ul>
+                </div>
+                <div class="box-price">
+                    <span class="price-label">Starting From</span>
+                    <span class="price-value">150 LEI</span>
+                </div>
+            </div>
+
+            <!-- CARDBOX 3: FREON CHARGING -->
+            <div class="service-box">
+                <div>
+                    <span class="box-icon">🧪</span>
+                    <h3>Freon Refills &amp; Checks</h3>
+                    <p>Comprehensive system diagnostic testing, pressure leak tracing, and eco-friendly gas structural adjustments.</p>
+                    <ul class="features-list">
+                        <li>Pressure drop evaluation</li>
+                        <li>Leak identification tracking</li>
+                        <li>Certified eco-refrigerants</li>
+                    </ul>
+                </div>
+                <div class="box-price">
+                    <span class="price-label">Starting From</span>
+                    <span class="price-value">300 LEI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND TRUST FACTORS -->
+    <section class="extra-benefits">
+        <div class="benefits-inner">
+            <h2>Engineered For Ultimate Reliability</h2>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">Why local home owners choose our professional HVAC solutions.</p>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>Diagnostics &amp; Repair</h4>
+                    <p>Accurate fault pinpointing to get your broken unit running smoothly again fast.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Hardware Unit Sales</h4>
+                    <p>We source premium climate equipment setups including brand new or certified second-hand systems.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>No Hidden Fees</h4>
+                    <p>Transparent pricing frameworks mapping directly out before any on-site deployment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREMIUM COMPACT FOOTER -->
+    <footer>
+        <div class="footer-brand">AC<span>Expert Bucharest</span></div>
+        <p>Professional Air Conditioning Supply, Mounting, &amp; System Maintenance.</p>
+        <p style="margin-top: 0.5rem;">Contact Dispatch: 0745 629 348</p>
+        <div class="footer-meta">
+            &copy; 2026 AC Expert Bucharest. All rights reserved. Private Operator. Certified Professional Performance.
+        </div>
+    </footer>
+
+    <!-- FIXED MOBILE INTERACTION DOCK -->
+    <div class="fixed-action-bar">
+        <a href="tel:+40745629348" class="action-tab tab-phone">
+            <span>📞 Call 0745 629 348</span>
+        </a>
+        <a href="https://wa.me/40745629348" class="action-tab tab-whatsapp" target="_blank" rel="noopener">
+            <span>💬 WhatsApp</span>
+        </a>
+    </div>
+
+</body>
+</html>
